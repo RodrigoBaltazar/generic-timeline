@@ -1,0 +1,24 @@
+{% if latest_videos_list %}
+    {% for video in latest_videos_list %}
+    <div class="card text-center">
+        <div class="card-header">
+          <!-- Votes: {{video.votes}} -->
+
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ video.name }}</h5>
+          <video width="400" controls>
+            <source src="{{ video.media.url }}" type='video/mp4'>
+            Your browser does not support the video tag.
+          </video>
+          <p class="card-text"> {{video.description}} </p>
+          <!-- <a href="#" class="btn btn-primary">Votar</a> -->
+        </div>
+        <div class="card-footer text-muted">
+          {{video.pub_date}}
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+        <p>No videos are available.</p>
+    {% endif %}
