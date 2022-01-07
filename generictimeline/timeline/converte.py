@@ -1,8 +1,16 @@
+from django.conf import settings
 import os
-import subprocess
+import ffmpy
 
-def converteVideo(video):
-    video_origem = '../generictimeline/media/ %s' %(video)
-    video_destino = os.path.splitext(video_origem[0])
-    video_destino = video_origem + '.webm'
-    subprocess.run('ffmpeg -i %s %s' %(video_origem, video_destino))
+def converteVideo():
+    os.chdir('../generictimeline/media/')
+    video = os.listdir()
+    video_webm = os.path.splitext(video[-1])
+    video_webm = video_webm[0] + '.webm'
+    ff = ffmpy.FFmpeg(
+        inputs={video[-1]: None},
+        outputs={video_webm: None}
+    )
+    ff.run()
+
+converteVideo()

@@ -20,3 +20,21 @@ def createVideo(request):
         form = VideoForm()
     context = {'form': form}
     return render(request, "timeline/video_form.html", context)
+
+#FLUXO:
+## createVideo -> Converte.py ->updateVideopath ->timeline vai exibir o Video atualizado!
+
+def updateVideopath(request, pk):
+    video = Video.objects.get(id=pk)
+    form = VideoForm(instance=video)
+
+    if request.method == 'POST':
+        form = VideoForm(request.POST, instance=video)
+        if form.is_valid():
+            form.save()
+            return redirect('timeline')
+        
+    context ={'form': form}
+    return render(request, "timeline/video_form.html", context)
+
+    

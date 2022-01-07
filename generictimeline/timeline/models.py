@@ -7,7 +7,6 @@ class Video(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     votes = models.IntegerField(default=0)
     size = models.IntegerField(default=0)
-    filepath = models.CharField(max_length=200)
     approved = models.DateTimeField(auto_now_add=True)
     media = models.FileField(upload_to='')
 
