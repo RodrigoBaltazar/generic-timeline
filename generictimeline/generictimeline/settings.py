@@ -121,6 +121,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# Filepath where uploaded videos will be
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'generictimeline/media')
+
+MEDIA_URL = '/generictimeline/media/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 

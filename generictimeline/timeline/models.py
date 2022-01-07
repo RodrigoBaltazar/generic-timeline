@@ -8,7 +8,8 @@ class Video(models.Model):
     votes = models.IntegerField(default=0)
     size = models.IntegerField(default=0)
     filepath = models.CharField(max_length=200)
-    approved = models.DateTimeField()
+    approved = models.DateTimeField(auto_now_add=True)
+    media = models.FileField(upload_to='')
 
     def __str__(self):
         return self.name
