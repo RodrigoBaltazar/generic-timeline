@@ -7,8 +7,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', views.timeline, name='timeline'),
 
-    path('create-video/', views.createVideo, name='create-video'),
-    path('update-videoPath/<str:pk>/', views.updateVideopath, name='update-videopath'),
+    #path('create-video/', views.createVideo, name='create-video'),
+    #path('update-videoPath/<str:pk>/', views.updateVideopath, name='update-videopath'),
 ]
 
 #just for development proporse
