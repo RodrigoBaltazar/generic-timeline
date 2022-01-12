@@ -3,7 +3,7 @@ import os
 import ffmpy
 
 def converteVideo():
-    os.chdir('../generictimeline/media/')
+    os.chdir('generictimeline/media/')
     video = os.listdir()
     video_webm = os.path.splitext(video[-1])
     video_webm = video_webm[0] + '.webm'
