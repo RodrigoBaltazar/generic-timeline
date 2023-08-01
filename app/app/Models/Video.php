@@ -13,6 +13,10 @@ class Video extends Model
     protected $fillable = [
 
         'message',
+        'title',
+        'description',
+        'file_path',
+        'duration'
 
     ];
 

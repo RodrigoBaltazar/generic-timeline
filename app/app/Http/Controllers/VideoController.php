@@ -37,6 +37,10 @@ class VideoController extends Controller
         $validated = $request->validate([
 
             'message' => 'required|string|max:255',
+            'title' => 'required|string|max:255',
+            'duration' => 'required|integer',
+            'description' => 'required|string|max:255',
+            'file_path' => 'required|string|max:255',
 
         ]);
 
@@ -75,6 +79,10 @@ class VideoController extends Controller
         $validated = $request->validate([
 
             'message' => 'required|string|max:255',
+            'title' => 'required|string|max:255',
+            'duration' => 'required|integer',
+            'description' => 'required|string|max:255',
+            'file_path' => 'required|string|max:255',
 
         ]);
 
