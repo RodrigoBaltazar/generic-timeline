@@ -20,9 +20,11 @@ const Form = () => {
                 Duration: <input name="duration" />
             </label>
             <hr />
-            <button type="button" class="btn btn-primary">
-                Enviar
-            </button>
+            <label htmlFor="">
+              Input: <input type="file" />
+            </label>
+            <hr />
+            <input class="btn btn-primary" type="submit" value="Upload Video - Enviar"></input>
             </form>
         </section>
     )

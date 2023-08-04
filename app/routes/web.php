@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -27,10 +28,11 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return Inertia::render('Dashboard/Index');
+})->name('dashboard');
 
-Route::resource('videos', VideoController::class)
+
+Route::resource('/videos', VideoController::class)
 
     ->only(['index', 'store', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);

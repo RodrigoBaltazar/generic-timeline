@@ -50,7 +50,10 @@ class VideoController extends Controller
 
  
 
-        return redirect(route('videos.index'));    }
+        // return redirect(route('videos.index'));    } Troquei após salvar o vídeo ao invés de continuar na página de salvar mais vídeos, ir
+        //para página de dashboard para podermos já ver o vídeo exibindo
+            return redirect(route('Dashboard.index'));
+    }
 
     /**
      * Display the specified resource.
